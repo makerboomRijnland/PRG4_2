@@ -16,3 +16,9 @@
  *  3. Add a count of astronauts to the page.
  * 
  */
+
+window.addEventListener('load', setup);
+
+function setup() {
+    alert("Geladen");
+}

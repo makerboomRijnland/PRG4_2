@@ -20,5 +20,15 @@
 window.addEventListener('load', setup);
 
 function setup() {
-    alert("Geladen");
+    fetch('astronauts.json')
+        .then(parseJSON)
+        .then(showAstronauts);
+}
+
+function parseJSON(response) {
+    return response.json();
+}
+
+function showAstronauts(data) {
+    console.log(data);
 }

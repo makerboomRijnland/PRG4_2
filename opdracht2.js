@@ -30,5 +30,25 @@ function parseJSON(response) {
 }
 
 function showAstronauts(data) {
-    console.log(data);
+    const astronaut = data[0];
+
+    // Maak een <div class="astronaut">
+    const astronautDiv = document.createElement('div');
+    astronautDiv.className = "astronaut";
+
+    // Maak een <div class="bio"> in <div class="astronaut">
+    const astronautBio = document.createElement('div');
+    astronautBio.classList.add('bio');
+    astronautDiv.appendChild(astronautBio);
+
+    // Maak een <h3> in <div class="bio">
+    const astronautName = document.createElement('h3');
+    astronautName.innerHTML = `${astronaut.firstName} ${astronaut.lastName}`;
+    astronautBio.appendChild(astronautName);
+
+    // Voeg <div class="astronaut"> toe aan <div id="container">
+    const container = document.getElementById('container');
+    container.appendChild(astronautDiv);
+
+    // console.log(data);
 }
